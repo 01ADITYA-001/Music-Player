@@ -42,8 +42,8 @@ public class MusicPlayerGUI extends JFrame{
         // preventing rh etool bar from moving
         toolBar.setFloatable(false);
 
-        //adding the drop down menu
-        JMenuBar menuBar = new JMenuBar();
+        //adding  the drop down menu
+        JMenuBar menuBar =  new JMenuBar();
         toolBar.add(menuBar);
 
         //new adding a song menu where we will place the loading song option
@@ -64,8 +64,6 @@ public class MusicPlayerGUI extends JFrame{
 
         JMenuItem loadPlaylist = new JMenuItem("Load PlayList");
         playListMenu.add(loadPlaylist);
-
-
 
         add(toolBar);
     }
