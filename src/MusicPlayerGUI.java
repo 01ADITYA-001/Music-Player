@@ -11,7 +11,6 @@ public class MusicPlayerGUI extends JFrame{
         super("Music Player");
 
         // seeting size and width
-
         setSize(400 , 600);
 
         // end the project when the project is closed
@@ -22,7 +21,6 @@ public class MusicPlayerGUI extends JFrame{
 
         // to prevent from resizing trhe aap
         setResizable(false);
-
 
         //seeting the layout to null to alow us to control the (x,y) coordinates of the components
         // and also set teh height and width
