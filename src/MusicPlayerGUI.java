@@ -53,7 +53,7 @@ public class MusicPlayerGUI extends JFrame{
         songMenu.add(loadSong);
 
         // now adding the playlist menu
-        JMenu playListMenu = new JMenu("PlayList");
+        JMenu playListMenu = new JMenu("Playlist");
         menuBar.add(playListMenu);
 
         // then add the items to the playlist menu
