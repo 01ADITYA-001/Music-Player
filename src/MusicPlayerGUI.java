@@ -44,6 +44,14 @@ public class MusicPlayerGUI extends JFrame{
         songImage.setBounds(0 , 50 , getWidth() -20 , 225);
         add(songImage);
 
+        //song title
+        JLabel songTitle = new JLabel("Song Title");
+        songTitle.setBounds(0 , 285 , getWidth() - 20 , 30);
+        songTitle.setFont(new Font("Dialog" , Font.BOLD , 24));
+        songTitle.setForeground(TEXT_COLOR);
+        songTitle.setHorizontalAlignment(SwingConstants.CENTER);
+        add(songTitle);
+
     }
 
     private void addToolBar(){
