@@ -1,5 +1,9 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.File;
 
 public class MusicPlayerGUI extends JFrame{
 
@@ -32,8 +36,17 @@ public class MusicPlayerGUI extends JFrame{
         addGuiComponents();
 
     }
-
     private void addGuiComponents(){
+        // add tool bar
+        addToolBar();
+
+        JLabel songImage = new JLabel(loadImage("src/assets/record.png"));
+        songImage.setBounds(0 , 50 , getWidth() -20 , 225);
+        add(songImage);
+
+    }
+
+    private void addToolBar(){
         JToolBar toolBar = new JToolBar();
         toolBar.setBounds(0,0,getWidth() , 25);
 
@@ -66,6 +79,18 @@ public class MusicPlayerGUI extends JFrame{
         add(toolBar);
     }
 
+    private ImageIcon loadImage(String imagePath){
+        try{
+            // reading the image from the path
+            BufferedImage image = ImageIO.read(new File(imagePath));
 
+            // returns an image so the component can render the image
+            return new ImageIcon(image);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
+        // could not find the result
+        return null;
+    }
 }
