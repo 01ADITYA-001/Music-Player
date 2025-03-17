@@ -1,15 +1,25 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
+import java.util.jar.JarFile;
 
 public class MusicPlayerGUI extends JFrame{
 
     // color configuration
     public static final Color FRAME_COLOR = Color.BLACK;
     public static final Color TEXT_COLOR = Color.WHITE;
+
+    private musicPlayer musicplayer;
+
+
+    // allow is to use the file explorer in ou aap
+
+    private JFileChooser jFileChooser;
 
     public MusicPlayerGUI(){
         super("Music Player");
@@ -32,6 +42,13 @@ public class MusicPlayerGUI extends JFrame{
 
         // seeting the background Color
         getContentPane().setBackground(FRAME_COLOR) ;
+
+        musicplayer = new musicPlayer();
+
+        jFileChooser = new JFileChooser();
+
+        // set a default path for teh file
+        jFileChooser.setCurrentDirectory(new File("src/assets"));
 
         addGuiComponents();
 
@@ -122,6 +139,21 @@ public class MusicPlayerGUI extends JFrame{
 
         //adding the load song item in the song menu
         JMenuItem loadSong = new JMenuItem("Load Songs");
+        loadSong.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jFileChooser.showOpenDialog(MusicPlayerGUI.this);
+                File selectedFile = jFileChooser.getSelectedFile();
+
+                if(selectedFile != null){
+                    // create a song obj based on the selcted file
+                    Song song = new Song(selectedFile.getPath());
+
+                    // load music in the player
+                    musicplayer.loadSong(song);
+                }
+            }
+        });
         songMenu.add(loadSong);
 
         // now adding the playlist menu

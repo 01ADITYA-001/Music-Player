@@ -29,8 +29,26 @@ public class musicPlayer {
             //read  mp3 audio data
             FileInputStream fileInputStream =  new FileInputStream(currentSong.getFilePath());
 
+            //start music
+            startMusicThread();
+
+
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    // this thread will handle the music
+    private void startMusicThread(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }
