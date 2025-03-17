@@ -71,6 +71,36 @@ public class MusicPlayerGUI extends JFrame{
     }
 
     private void addPlaybackButtons(){
+        JPanel playBackButtons = new JPanel();
+        playBackButtons.setBounds(0 , 435 , getWidth() - 10 , 80);
+        playBackButtons.setBackground(null);
+
+
+        //previous buttons
+        JButton prevButton = new JButton(loadImage("out/production/Music player/assets/previous.png"));
+        prevButton.setBorderPainted(false);
+        prevButton.setBackground(null);
+        playBackButtons.add(prevButton);
+
+        // play button
+        JButton playButton = new JButton(loadImage("out/production/Music player/assets/play.png"));
+        playButton.setBorderPainted(false);
+        playButton.setBackground(null);
+        playBackButtons.add(playButton);
+
+        //pause button
+        JButton pauseButton = new JButton(loadImage("out/production/Music player/assets/pause.png"));
+        pauseButton.setBorderPainted(false);
+        pauseButton.setBackground(null);
+        playBackButtons.add(pauseButton);
+
+        //next button
+        JButton nextButton = new JButton(loadImage("out/production/Music player/assets/next.png"));
+        nextButton.setBorderPainted(false);
+        nextButton.setBackground(null);
+        playBackButtons.add(nextButton);
+
+        add(playBackButtons);
 
     }
 
