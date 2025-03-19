@@ -16,9 +16,7 @@ public class MusicPlayerGUI extends JFrame{
 
     private musicPlayer musicplayer;
 
-
     // allow is to use the file explorer in ou aap
-
     private JFileChooser jFileChooser;
 
     public MusicPlayerGUI(){
