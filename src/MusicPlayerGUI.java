@@ -19,6 +19,7 @@ public class MusicPlayerGUI extends JFrame{
     // allow is to use the file explorer in ou aap
     private JFileChooser jFileChooser;
 
+    private JLabel songTitle , songArtist;
     public MusicPlayerGUI(){
         super("Music Player");
 
@@ -60,7 +61,7 @@ public class MusicPlayerGUI extends JFrame{
         add(songImage);
 
         //song title
-        JLabel songTitle = new JLabel("Song Title");
+        songTitle = new JLabel("Song Title");
         songTitle.setBounds(0 , 285 , getWidth() - 10 , 30);
         songTitle.setFont(new Font("Dialog" , Font.BOLD , 24));
         songTitle.setForeground(TEXT_COLOR);
@@ -68,7 +69,7 @@ public class MusicPlayerGUI extends JFrame{
         add(songTitle);
 
         //song artist
-        JLabel songArtist = new JLabel("Artist");
+        songArtist = new JLabel("Artist");
         songArtist.setBounds(0 , 315 , getWidth() - 10 , 30);
         songArtist.setFont(new Font("Dialog" , Font.BOLD , 24 ));
         songArtist.setForeground(TEXT_COLOR);
@@ -120,6 +121,11 @@ public class MusicPlayerGUI extends JFrame{
 
     }
 
+    private void updateSongTitleAndArtist(){
+        songTitle.setText(songTitle.getText());
+        songArtist.setText(songArtist.getText());
+    }
+
     private void addToolBar(){
         JToolBar toolBar = new JToolBar();
         toolBar.setBounds(0,0,getWidth() , 25);
@@ -149,6 +155,10 @@ public class MusicPlayerGUI extends JFrame{
 
                     // load music in the player
                     musicplayer.loadSong(song);
+
+                    //upating the name of the artist , we will need it further more in this
+                    // so we will create a global variable for it
+                    updateSongTitleAndArtist();
                 }
             }
         });
