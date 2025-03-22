@@ -9,7 +9,6 @@ public class musicPlayer {
     // useing JPlayer library to create an advanced object which will handle paying the music
     private AdvancedPlayer advancedPlayer;
 
-
     //constructor
     public musicPlayer(){
 

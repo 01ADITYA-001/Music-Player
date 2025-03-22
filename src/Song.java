@@ -14,7 +14,6 @@ public class Song {
         private String songLength;
         private String filePath;
 
-
     public Song(String filePath){
             this.filePath = filePath;
             try{
@@ -53,6 +52,5 @@ public class Song {
     public String getFilePath() {
         return filePath;
     }
-
 
 }
