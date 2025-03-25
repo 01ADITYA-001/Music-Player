@@ -31,7 +31,6 @@ public class musicPlayer {
             //start music
             startMusicThread();
 
-
         }catch(Exception e){
             e.printStackTrace();
         }
