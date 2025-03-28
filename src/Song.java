@@ -52,4 +52,6 @@ public class Song {
         return filePath;
     }
 
+    //seeters
+
 }
