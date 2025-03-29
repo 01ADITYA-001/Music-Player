@@ -44,6 +44,7 @@ public class Song {
         return songArtist;
     }
 
+
     public String getSongLength() {
         return songLength;
     }
